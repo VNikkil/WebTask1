@@ -14,7 +14,7 @@
 
   var tableWidth = window.innerWidth;
   var num = 0;
-  var difficulty;
+  var difficulty=0;
   var arr = [];
   var scores = [1000,1000,1000,1000,1000,1000];
   var previous_chosen = 0;
