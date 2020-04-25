@@ -1,0 +1,218 @@
+        body{
+           background-color:black;
+          }
+          
+        h1{
+          color:chartreuse ;
+          font-family:Bradley Hand, cursive ;
+         }  
+
+        div{
+           position: absolute;
+           right: 8%;
+           top: 20%;
+           z-index: 3;
+         }
+
+         #Leaderboard{
+           background-color: rgb(20, 20, 17);
+         }
+
+         p{
+           color: rgb(67, 255, 67);
+           font-size: x-large;
+           margin-left: 10%;
+           margin-right: 10%;
+           z-index: 2;
+         }
+
+       #newgame{
+          position: absolute;
+          top: 15%;
+          left: 45%;
+         }
+
+       #grid1 {
+         position: absolute;
+         bottom:2%;
+         left: 30%; 
+         width:35%; 
+         height:35%;
+         overflow: hidden;
+         background-color:black;
+        }
+
+
+  #grid2 {
+         position: absolute;
+         bottom:2%;
+         left: 64.8%;
+         width:35%; 
+        height:35%;
+        overflow: visible;
+        background-color:black;
+        z-index: 0;
+   }
+
+   #grid3 {
+         position: absolute;
+         bottom:2%;
+         left: -5%;
+          width:35%; 
+         height:35%;
+         overflow: visible;
+         background-color:black;
+         z-index: 0;
+   }
+
+   
+
+  td{
+    border: 5px solid black;
+    border-radius: 5px;
+      height:100;
+      width: 100;
+      background-color: rgb(10, 39, 11);
+      text-align: center;
+      transition: 0.01s;
+      visibility: hidden;
+      font-size: xx-large;
+      color:rgb(243, 3, 203);
+  }
+
+
+
+  
+   .marqueel , .marqueer {
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.marqueel td { animation-name:marqueel; 
+              animation-duration:  12s ;
+              animation-timing-function: linear;
+              animation-iteration-count: infinite;
+              animation-play-state: paused;
+                }
+              
+.marqueer td {  animation-name:marqueer; 
+              animation-duration:  12s ;
+              animation-timing-function: linear;
+              animation-iteration-count: infinite;
+              animation-play-state: paused;
+            }
+ 
+ @keyframes marqueel {
+    0% { transform: translate(0%, 0);  }
+    100% { transform: translate(-510%, 0);  }
+}
+
+@keyframes marqueer {
+
+    0% { transform: translate(0%, 0);  }
+    100% { transform: translate(+510%, 0);  }
+    
+} 
+
+.square2 {
+    position: absolute;
+         bottom:2%;
+         left: 64.8%;
+        width:35%; 
+       height:100%;
+  background-color:black;
+  z-index: 0;
+}
+
+.square3 {
+    position: absolute;
+         bottom:2%;
+         left: -4.8%;
+        width:35%; 
+       height:100%;
+  background-color:black;
+  z-index: 0;
+}
+
+#easy {
+    
+    position: absolute;
+      top : 30%;
+      left: 5%;
+      z-index: 3;
+}
+
+#medium {
+    position: absolute;
+    top : 38%;
+    left:5%;
+    z-index: 3;
+}
+
+#difficult {
+    position: absolute;
+      top:46%;
+      left:5%;
+        z-index: 3;
+}
+
+button{
+  width : 10%;
+  height : 5%;
+  background-color: rgb(80, 252, 0);
+  font-size: large;
+}
+
+
+@media screen and (max-width: 980px){
+  #Leaderboard{
+    position: absolute;
+    top:100%;
+    left:40%;
+  }
+}
+  @media screen and (max-height: 715px){
+  
+
+  #grid1 {
+         position: absolute;
+          top:100%;
+         left: 30%; 
+         width:35%; 
+         height:65%;
+        }
+
+  #grid2{
+         position: absolute;
+          top:100%;
+          left: 64.8%;
+         width:35%; 
+          height:65%;
+        }     
+ #grid3 {
+         position: absolute;
+          top:100%;
+          left: -5%;
+          width:35%; 
+         height:65%;
+        }
+
+.square2 {
+       position: absolute;
+       top:100%;
+          left: 64.8%;
+         width:35%; 
+          height:100%;
+}
+
+
+.square3 {
+        position: absolute;
+        top:100%;
+        left: -4.8%;
+        width:35%; 
+        height:100%;
+      
+}
+
+}
