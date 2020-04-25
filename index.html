@@ -1,336 +1,136 @@
 <html>
-
-<head>
-    <style>
-
-     body{
-    background-color:black;
-          }
-          
-        h1{
-          color:chartreuse ;
-          font-family:Bradley Hand, cursive ;
-         }  
-
-         div{
-           position: absolute;
-           
-           right: 8%;
-           top: 20%;
-           z-index: 3;
-         }
-
-         #Leaderboard{
-           background-color: rgb(20, 20, 17);
-         }
-
-       p{
-         color: rgb(67, 255, 67);
-         font-size: x-large;
-          margin-left: 10%;
-         margin-right: 10%;
-         z-index: 2;
-        }
-
-       #newgame{
-         position: absolute;
-         top: 15%;
-        left: 45%;
-       }
-
-       #grid1 {
-         position: absolute;
-         bottom:2%;
-         left: 30%; 
-         width:35%; 
-         height:35%;
-         overflow: hidden;
-         background-color:black;
-        }
-
-
-  #grid2 {
-         position: absolute;
-         bottom:2%;
-         left: 64.8%;
-         width:35%; 
-        height:35%;
-        overflow: visible;
-        background-color:black;
-        z-index: 0;
-   }
-
-   #grid3 {
-         position: absolute;
-         bottom:2%;
-         left: -5%;
-          width:35%; 
-         height:35%;
-         overflow: visible;
-         background-color:black;
-         z-index: 0;
-   }
-
-   
-
-  td{
-    border: 5px solid black;
-    border-radius: 5px;
-      height:100;
-      width: 100;
-      background-color: rgb(10, 39, 11);
-      text-align: center;
-      transition: 0.01s;
-      visibility: hidden;
-      font-size: xx-large;
-      color:rgb(243, 3, 203);
-  }
-
-
-
-  
-   .marqueel , .marqueer {
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-.marqueel td { animation-name:marqueel; 
-              animation-duration:  12s ;
-              animation-timing-function: linear;
-              animation-iteration-count: infinite;}
-              
-.marqueer td {  animation-name:marqueer; 
-              animation-duration:  12s ;
-              animation-timing-function: linear;
-              animation-iteration-count: infinite;}
- 
- @keyframes marqueel {
-    0% { transform: translate(0%, 0);  }
-    100% { transform: translate(-510%, 0);  }
-}
-
-@keyframes marqueer {
-
-    0% { transform: translate(0%, 0);  }
-    100% { transform: translate(+510%, 0);  }
-    
-} 
-
-.square2 {
-    position: absolute;
-         bottom:2%;
-         left: 64.8%;
-        width:35%; 
-       height:100%;
-  background-color:black;
-  z-index: 0;
-}
-
-.square3 {
-    position: absolute;
-         bottom:2%;
-         left: -4.8%;
-        width:35%; 
-       height:100%;
-  background-color:black;
-  z-index: 0;
-}
-
-#easy {
-    
-    position: absolute;
-      top : 30%;
-      left: 5%;
-      z-index: 3;
-}
-
-#difficult {
-    position: absolute;
-      top:40%;
-      left:5%;
-      z-index: 3;
-}
-
-button{
-  width : 10%;
-  height : 5%;
-  background-color: rgb(80, 252, 0);
-  font-size: large;
-}
-
-
-@media screen and (max-width: 980px){
-  #Leaderboard{
-    position: absolute;
-    top:100%;
-    left:40%;
-  }
-  
-}
-
-
-</style>
-</head>
-
-<body style="overflow-y: scroll">
-
-
-    
-
-    <p style="float: right" id="timer">0</p>
-    <p style="float: left" >Click the <strong> numbers </strong> as quickly as you can</p>
+   <head>
+      <link rel="stylesheet" href="css/styles.css">
+   </head>
+   <body style="overflow-y: scroll">
+      <p style="float: right" id="timer">0</p>
+      <p style="float: left" >Click the <strong> numbers </strong> as quickly as you can</p>
       <p style="float: right" onclick="newgame()" id="newgame">New Game</p>
-  
-      
-  <table id="grid1">
-    <tr class="marqueel" > 
-      <td id = "left" >1</td>
-      <td id = "left">2</td>
-      <td id = "left">3</td>
-      <td id = "left">4</td>
-      <td id = "left">5</td>
-    
-    </tr>
-      <tr class="marqueer">
-        <td id ="right">6</td>
-        <td id ="right">7</td>
-        <td id ="right">8</td>
-        <td id ="right">9</td>
-        <td id ="right">10</td>
-      </tr>
-      <tr class="marqueel" >
-        <td id = "left">11</td>
-        <td id = "left">12</td>
-        <td id = "left">13</td>
-        <td id = "left">14</td>
-        <td id = "left">15</td>
-      </tr>
-  
-      <tr class="marqueer">
-      <td id ="right">16</td>
-      <td id ="right">17</td>
-      <td id ="right">18</td>
-      <td id ="right">19</td>
-      <td id ="right">20</td>
-      </tr>
-  
-      <tr class="marqueel">
-        <td id = "left">21</td>
-        <td id = "left">22</td>
-        <td id = "left">23</td>
-        <td id = "left">24</td>
-        <td id = "left">25</td>
-    </tr>
-  
-    </table>
-
-    <table id="grid2">
-        <tr class="marqueel" > 
+      <table id="grid1">
+         <tr class="marqueel" >
             <td id = "left" >1</td>
             <td id = "left">2</td>
             <td id = "left">3</td>
             <td id = "left">4</td>
             <td id = "left">5</td>
-          
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>7</td>
-          <td>8</td>
-          <td>9</td>
-          <td>10</td>
-        </tr>
-        <tr class="marqueel" >
+         </tr>
+         <tr class="marqueer">
+            <td id ="right">6</td>
+            <td id ="right">7</td>
+            <td id ="right">8</td>
+            <td id ="right">9</td>
+            <td id ="right">10</td>
+         </tr>
+         <tr class="marqueel" >
             <td id = "left">11</td>
             <td id = "left">12</td>
             <td id = "left">13</td>
             <td id = "left">14</td>
             <td id = "left">15</td>
-        </tr>
-    
-        <tr>
-        <td>16</td>
-        <td>17</td>
-        <td>18</td>
-        <td>19</td>
-        <td>20</td>
-        </tr>
-    
-        <tr class="marqueel">
+         </tr>
+         <tr class="marqueer">
+            <td id ="right">16</td>
+            <td id ="right">17</td>
+            <td id ="right">18</td>
+            <td id ="right">19</td>
+            <td id ="right">20</td>
+         </tr>
+         <tr class="marqueel">
             <td id = "left">21</td>
             <td id = "left">22</td>
             <td id = "left">23</td>
             <td id = "left">24</td>
             <td id = "left">25</td>
-        </tr>
-    
+         </tr>
       </table>
-
+      <table id="grid2">
+         <tr class="marqueel" >
+            <td id = "left" >1</td>
+            <td id = "left">2</td>
+            <td id = "left">3</td>
+            <td id = "left">4</td>
+            <td id = "left">5</td>
+         </tr>
+         <tr>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+         </tr>
+         <tr class="marqueel" >
+            <td id = "left">11</td>
+            <td id = "left">12</td>
+            <td id = "left">13</td>
+            <td id = "left">14</td>
+            <td id = "left">15</td>
+         </tr>
+         <tr>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+         </tr>
+         <tr class="marqueel">
+            <td id = "left">21</td>
+            <td id = "left">22</td>
+            <td id = "left">23</td>
+            <td id = "left">24</td>
+            <td id = "left">25</td>
+         </tr>
+      </table>
       <table id="grid3">
-        <tr  > 
+         <tr  >
             <td>1</td>
             <td>2</td>
             <td>3</td>
             <td>4</td>
             <td>5</td>
-          
-        </tr>
-        <tr class="marqueer">
-          <td id ="right">6</td>
-          <td id ="right">7</td>
-          <td id ="right">8</td>
-          <td id ="right">9</td>
-          <td id ="right">10</td>
-        </tr>
-        <tr  >
+         </tr>
+         <tr class="marqueer">
+            <td id ="right">6</td>
+            <td id ="right">7</td>
+            <td id ="right">8</td>
+            <td id ="right">9</td>
+            <td id ="right">10</td>
+         </tr>
+         <tr  >
             <td>11</td>
             <td>12</td>
             <td>13</td>
             <td>14</td>
             <td>15</td>
-        </tr>
-    
-        <tr class="marqueer">
-        <td id ="right">16</td>
-        <td id ="right">17</td>
-        <td id ="right">18</td>
-        <td id ="right">19</td>
-        <td id ="right">20</td>
-        </tr>
-    
-        <tr >
+         </tr>
+         <tr class="marqueer">
+            <td id ="right">16</td>
+            <td id ="right">17</td>
+            <td id ="right">18</td>
+            <td id ="right">19</td>
+            <td id ="right">20</td>
+         </tr>
+         <tr >
             <td>21</td>
             <td>22</td>
             <td>23</td>
             <td>24</td>
             <td>25</td>
-        </tr>
-    
+         </tr>
       </table>
-
-
       <div class="square2"></div>
-      <div class="square3"></div>     
-      
-      
+      <div class="square3"></div>
       <div id="Leaderboard">
-        <h1>LEADERBOARD</h1>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-      
+         <h1>LEADERBOARD</h1>
+         <p></p>
+         <p></p>
+         <p></p>
+         <p></p>
+         <p></p>
       </div>
-  
-    <button id="easy" onclick="easy()">EASY</button>
-    <button id="difficult" onclick="difficult()">DIFFICULT</button>
-   
-    
-  
-  </body>
-  
-  <script src="js/functions.js"></script>
-
-
+      <button id="easy"      onclick="easy()">EASY</button>
+       <button id="medium"    onclick="medium()">MEDIUM</button>
+       <button id="difficult" onclick="difficult()">DIFFICULT</button>
+     
+   </body>
+   <script src="js/functions.js"></script>
 </html>
