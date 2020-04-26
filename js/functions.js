@@ -20,137 +20,162 @@ var MediumScores = ["first", "second", "third", "fourth", "fifth"];
 var DifficultScores = ["one", "two", "three", "four", "five"];
 var EasyScores = ["I", "II", "III", "IV", "V"];
 var enTryAgain = 1;
-1
+var index = 0;
 
 
-for (let i = 0; i < cells.length; i++) {
-
-	(function (index) {
-
-		cells[i].addEventListener("click", function () {
-
-			if (this.innerHTML == PrevChosen + 1) {
-				myAudio.play();
-
-				if (this.innerHTML < 16) {
-					this.innerHTML = parseInt(this.innerHTML) + 25;
-					CellsT3[index].innerHTML = this.innerHTML;
-					CellsT1[index].innerHTML = this.innerHTML;
-					temp = this.innerHTML;
-					cells[index].style.backgroundColor = "#fffa" + (130 - temp * 3).toString(16);
-					CellsT3[index].style.backgroundColor = "#fffa" + (130 - temp * 3).toString(16);
-					CellsT1[index].style.backgroundColor = "#fffa" + (130 - temp * 3).toString(16);
-				} else {
-					this.style.visibility = "hidden";
-					CellsT3[index].style.visibility = "hidden";
-					CellsT1[index].style.visibility = "hidden";
 
 
-					if (this.innerHTML == 40) {
-						stop();
-						scoreboard();
+cliq = (cells) =>{
+
+	cells.forEach(function (cell,index)
+	{
+      cell.addEventListener("click", () => {
+
+	if (cell.innerHTML == PrevChosen + 1) {
+		myAudio.play();
+		
+
+		if (cell.innerHTML < 16) {
+			cell.innerHTML = parseInt(cell.innerHTML) + 25;
+			CellsT3[index].innerHTML = cell.innerHTML;
+			CellsT1[index].innerHTML = cell.innerHTML;
+			temp = cell.innerHTML;
+			cell.style.backgroundColor = "#fffa" + (130 - temp * 3).toString(16);
+			CellsT3[index].style.backgroundColor = "#fffa" + (130 - temp * 3).toString(16);
+			CellsT1[index].style.backgroundColor = "#fffa" + (130 - temp * 3).toString(16);
+		} else {
+			cell.style.visibility = "hidden";
+			CellsT3[index].style.visibility = "hidden";
+			CellsT1[index].style.visibility = "hidden";
 
 
-					}
-				}
-				PrevChosen++;
-			} else {
+			if (cell.innerHTML == 40) {
 				stop();
-				alert("GAME OVER !!");
-				for (let i = 0; i < 25; i++) {
-					CellsT3[i].style.visibility = "hidden";
-					cells[i].style.visibility = "hidden";
-					CellsT1[i].style.visibility = "hidden";
-				}
-				MainTable.style.backgroundImage = "url('images/gameover.png')";
+				scoreboard();
+
+
 			}
-		});
+		}
+		PrevChosen++;
+	} else {
+		stop();
+		alert("GAME OVER !!");
+		for (let i = 0; i < 25; i++) {
+			CellsT3[i].style.visibility = "hidden";
+			cells[i].style.visibility = "hidden";
+			CellsT1[i].style.visibility = "hidden";
+		}
+		MainTable.style.backgroundImage = "url('images/gameover.png')";
+	}
+});
 
-		CellsT3[i].addEventListener("click", function () {
-
-			if (this.innerHTML == PrevChosen + 1) {
-				myAudio.play();
-
-
-				if (this.innerHTML < 16) {
-					this.innerHTML = parseInt(this.innerHTML) + 25;
-					cells[index].innerHTML = this.innerHTML;
-					temp = this.innerHTML;
-					cells[index].style.backgroundColor = "#fffa" + (130 - temp * 3).toString(16);
-					CellsT3[index].style.backgroundColor = "#fffa" + (130 - temp * 3).toString(16);
-					CellsT1[index].style.backgroundColor = "#fffa" + (130 - temp * 3).toString(16);
-				} else {
-					this.style.visibility = "hidden";
-					cells[index].style.visibility = "hidden";
-
-
-					if (this.innerHTML == 40) {
-						stop();
-						scoreboard();
-
-					}
-				}
-
-				PrevChosen++;
-			} else {
-				stop();
-				alert("GAME OVER !!");
-				for (let i = 0; i < 25; i++) {
-					CellsT3[i].style.visibility = "hidden";
-					cells[i].style.visibility = "hidden";
-					CellsT1[i].style.visibility = "hidden";
-				}
-				MainTable.style.backgroundImage = "url('images/gameover.png')";
-			}
-		});
-
-
-		CellsT1[i].addEventListener("click", function () {
-
-			if (this.innerHTML == PrevChosen + 1) {
-				myAudio.play();
-
-
-				if (this.innerHTML < 16) {
-					this.innerHTML = parseInt(this.innerHTML) + 25;
-					cells[index].innerHTML = this.innerHTML;
-
-					temp = this.innerHTML;
-					cells[index].style.backgroundColor = "#fffa" + (130 - temp * 3).toString(16);
-					CellsT3[index].style.backgroundColor = "#fffa" + (130 - temp * 3).toString(16);
-					CellsT1[index].style.backgroundColor = "#fffa" + (130 - temp * 3).toString(16);
-				} else {
-					this.style.visibility = "hidden";
-					cells[index].style.visibility = "hidden";
-
-
-					if (this.innerHTML == 40) {
-						stop();
-						scoreboard();
-					}
-				}
-
-				PrevChosen++;
-			} else {
-				stop();
-				alert("GAME OVER !!");
-				for (let i = 0; i < 25; i++) {
-					CellsT3[i].style.visibility = "hidden";
-					cells[i].style.visibility = "hidden";
-					CellsT1[i].style.visibility = "hidden";
-				}
-				MainTable.style.backgroundImage = "url('images/gameover.png')";
-			}
-		});
-
-
-	})(i);
 }
+	)}
+
+	CliqT3 = (CellsT3) =>{
+
+		CellsT3.forEach(function (cell,index)
+		{
+		  cell.addEventListener("click", () => {
+			  
+	
+		if (cell.innerHTML == PrevChosen + 1) {
+			myAudio.play();
+	
+			if (cell.innerHTML < 16) {
+				cell.innerHTML = parseInt(cell.innerHTML) + 25;
+				cells[index].innerHTML = cell.innerHTML;
+				CellsT1[index].innerHTML = cell.innerHTML;
+				temp = cell.innerHTML;
+				cell.style.backgroundColor = "#fffa" + (130 - temp * 3).toString(16);
+				cells[index].style.backgroundColor = "#fffa" + (130 - temp * 3).toString(16);
+				CellsT1[index].style.backgroundColor = "#fffa" + (130 - temp * 3).toString(16);
+			} else {
+				cell.style.visibility = "hidden";
+				cells[index].style.visibility = "hidden";
+				CellsT1[index].style.visibility = "hidden";
+	
+	
+				if (cell.innerHTML == 40) {
+					stop();
+					scoreboard();
+	
+	
+				}
+			}
+			PrevChosen++;
+		} else {
+			stop();
+			alert("GAME OVER !!");
+			for (let i = 0; i < 25; i++) {
+				CellsT3[i].style.visibility = "hidden";
+				cells[i].style.visibility = "hidden";
+				CellsT1[i].style.visibility = "hidden";
+			}
+			MainTable.style.backgroundImage = "url('images/gameover.png')";
+		}
+	});
+	
+	}
+		)}
+
+		CliqT1 = (CellsT1) =>{
+
+			CellsT1.forEach(function (cell,index)
+			{
+			  cell.addEventListener("click", () => {
+				  
+		
+			if (cell.innerHTML == PrevChosen + 1) {
+				myAudio.play();
+		
+				if (cell.innerHTML < 16) {
+					cell.innerHTML = parseInt(cell.innerHTML) + 25;
+					cells[index].innerHTML = cell.innerHTML;
+					CellsT3[index].innerHTML = cell.innerHTML;
+					temp = cell.innerHTML;
+					cell.style.backgroundColor = "#fffa" + (130 - temp * 3).toString(16);
+					cells[index].style.backgroundColor = "#fffa" + (130 - temp * 3).toString(16);
+					CellsT3[index].style.backgroundColor = "#fffa" + (130 - temp * 3).toString(16);
+				} else {
+					cell.style.visibility = "hidden";
+					cells[index].style.visibility = "hidden";
+					CellsT3[index].style.visibility = "hidden";
+		
+		
+					if (cell.innerHTML == 40) {
+						stop();
+						scoreboard();
+		
+		
+					}
+				}
+				PrevChosen++;
+			} else {
+				stop();
+				alert("GAME OVER !!");
+				for (let i = 0; i < 25; i++) {
+					CellsT3[i].style.visibility = "hidden";
+					cells[i].style.visibility = "hidden";
+					CellsT1[i].style.visibility = "hidden";
+				}
+				MainTable.style.backgroundImage = "url('images/gameover.png')";
+			}
+		});
+		
+		}
+			)}
+
+
+cliq(cells);
+CliqT3(CellsT3);
+CliqT1(CellsT1);
 
 
 function newgame()
 
 {
+	
 	if (enTryAgain == 1) {
 		stop();
 		document.getElementById("timer").innerHTML = 0;
@@ -185,6 +210,8 @@ function newgame()
 				CellsT3[i].style.visibility = "visible";
 				CellsT1[i].style.visibility = "visible";
 			}
+			
+		
 
 			MainTable.style.backgroundImage = "none";
 
