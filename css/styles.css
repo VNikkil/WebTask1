@@ -57,7 +57,7 @@
    #grid3 {
          position: absolute;
          bottom:2%;
-         left: -5%;
+         left: -4.8%;
           width:35%; 
          height:35%;
          overflow: visible;
@@ -68,13 +68,12 @@
    
 
   td{
-    border: 5px solid black;
-    border-radius: 5px;
+      border: 5px solid black;
       height:100;
       width: 100;
       background-color: rgb(10, 39, 11);
       text-align: center;
-      transition: 0.01s;
+      transition: 0.000001s;
       visibility: hidden;
       font-size: xx-large;
       color:rgb(243, 3, 203);
