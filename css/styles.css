@@ -30,6 +30,8 @@
           position: absolute;
           top: 15%;
           left: 45%;
+          background-color: chartreuse;
+          color: black;
          }
 
        #grid1 {
